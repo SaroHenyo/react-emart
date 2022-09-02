@@ -1,0 +1,22 @@
+/* <!-- ---- Navbar ---- --> */
+.navbar-brand img{
+  width: 30px;
+}
+#brand-name{
+  letter-spacing: 2px;
+  font-family: var(--lg-font);
+}
+.navbar{
+ box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1); 
+}
+.nav-link:hover{
+  color: var(--pink) !important;
+}
+.nav-item{
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+@media(min-width: 992px){
+  .nav-item{
+      border-bottom: none;
+  }
+}
