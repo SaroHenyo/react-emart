@@ -1,6 +1,20 @@
 import React from 'react'
-import NavigationBar from '../NavigationBar'
+import Hero from '../Hero'
+import Collection from '../Collection'
+import Specials from '../Specials'
+import Banner from '../Banner'
+import Blogs from '../Blogs'
+import Footer from '../Footer'
 
 export default function Home() {
-  return <h1>HELLO WORLD</h1>
+  return (
+    <>
+      <Hero />
+      <Collection />
+      <Specials />
+      <Banner />
+      <Blogs />
+      <Footer />
+    </>
+  )
 }

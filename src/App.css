@@ -15,8 +15,85 @@
 .nav-item{
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
 }
+.nav-btns .btn{
+  background-color: white;
+  color: rgb(85, 85, 85);
+  margin: 5px;
+  border: 1px solid rgb(85, 85, 85);
+}
+.nav-btns .btn:hover{
+  background: var(--pink);
+  color: white;
+  border: var(--pink);
+}
 @media(min-width: 992px){
   .nav-item{
       border-bottom: none;
   }
+}
+@media(max-width: 420px){
+  .nav-btn-label{
+      display: none;
+  }
+}
+
+/* <!-- ---- Hero ---- --> */
+#hero{
+  background: url(../public/images/banner-img-1.jpg) top/cover;
+  height: 100vh;
+  padding-top: 104px;
+}
+.carousel-inner h1{
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+.carousel-item .btn{
+  border-color: white !important;
+}
+
+/* <!-- ---- Collection ---- --> */
+.active-filter-btn{
+  background-color: var(--pink) !important;
+  color: white !important;
+  border-color: var(--pink) !important;
+}
+.collection-img span{
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+/* <!-- ---- Specials ---- --> */
+.special-img span{
+  top: 20px;
+  right: 20px;
+}
+.special-img:hover img{
+  transform: scale(1.2);
+}
+.special-img img{
+  transition: all 0.3s ease;
+}
+
+/* <!-- ---- Banner ---- --> */
+#banner{
+  background: url(../public/images/offer_img.jpg) center/cover;
+}
+#banner .row{
+  min-height: 60vh;
+}
+.banner-content span{
+  font-size: 28px;
+}
+.banner-content h2{
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+
+/* <!-- ---- Footer ---- --> */
+footer .brand{
+  font-family: var(--lg-font);
+  letter-spacing: 2px;
 }

@@ -1,0 +1,112 @@
+export const collections = [
+  {
+    id: 1,
+    image: 'images/c_formal_gray_shirt.png',
+    name: 'Gray Shirt',
+    filter: 'BEST',
+    price: '$ 49.99',
+  },
+  {
+    id: 2,
+    image: 'images/c_pant_girl.png',
+    name: 'Girl Pant',
+    filter: 'FEAT',
+    price: '$ 59.99',
+  },
+  {
+    id: 3,
+    image: 'images/c_polo-shirt.png',
+    name: 'Polo Shirt',
+    filter: 'NEW',
+    price: '$ 36.99',
+  },
+  {
+    id: 4,
+    image: 'images/c_shirt-girl.png',
+    name: 'Girl Shirts',
+    filter: 'BEST',
+    price: '$ 32.99',
+  },
+  {
+    id: 5,
+    image: 'images/c_t-shirt_men.png',
+    name: 'T-shirt Men',
+    filter: 'FEAT',
+    price: '$ 25.99',
+  },
+  {
+    id: 6,
+    image: 'images/c_tunic-shirt_girl.png',
+    name: 'T-shirt Girl',
+    filter: 'NEW',
+    price: '$ 35.99',
+  },
+  {
+    id: 7,
+    image: 'images/c_undershirt.png',
+    name: 'Undershirt',
+    filter: 'BEST',
+    price: '$ 45.99',
+  },
+  {
+    id: 8,
+    image: 'images/c_western-shirt.png',
+    name: 'Western Shirt',
+    filter: 'FEAT',
+    price: '$ 45.99',
+  },
+]
+
+export const specials = [
+  {
+    id: 1,
+    image: 'images/special_product_1.jpg',
+    name: 'Set One',
+    price: '$ 99.99',
+  },
+  {
+    id: 2,
+    image: 'images/special_product_2.jpg',
+    name: 'Set One',
+    price: '$ 109.99',
+  },
+  {
+    id: 3,
+    image: 'images/special_product_3.jpg',
+    name: 'Set One',
+    price: '$ 89.99',
+  },
+  {
+    id: 4,
+    image: 'images/special_product_4.jpg',
+    name: 'Set One',
+    price: '$ 98.99',
+  },
+]
+
+export const blogs = [
+  {
+    id: 1,
+    image: 'images/blog_1.jpg',
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    body:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
+    author: 'John Doe',
+  },
+  {
+    id: 2,
+    image: 'images/blog_2.jpg',
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    body:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
+    author: 'Sand Doe',
+  },
+  {
+    id: 3,
+    image: 'images/blog_3.jpg',
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    body:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
+    author: 'Brand Doe',
+  },
+]
