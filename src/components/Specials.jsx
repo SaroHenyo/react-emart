@@ -1,9 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { specials } from '../utilities/enum'
+import { specials } from '../utilities/enums'
 
-export default function Special() {
+export default function Specials() {
   const renderSpecials = () => {
     return specials.map((item) => (
       <div className="col-md-6 col-lg-4 col-xl-3 p-2" key={item.id}>
@@ -13,13 +13,10 @@ export default function Special() {
             <FontAwesomeIcon icon={faHeart} />
           </span>
         </div>
-
         <div className="text-center">
           <p className="text-capitalize mt-3 mb-1">{item.name}</p>
           <span className="fw-bold d-block">{item.price}</span>
-          <button href="#" className="btn btn-primary mt-3">
-            Add to Cart
-          </button>
+          <button className="btn btn-primary mt-3">Add to Cart</button>
         </div>
       </div>
     ))

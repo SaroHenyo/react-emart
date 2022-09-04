@@ -97,3 +97,8 @@ footer .brand{
   font-family: var(--lg-font);
   letter-spacing: 2px;
 }
+
+/* <!-- ---- Product ---- --> */
+#product{
+  padding-top: 104px;
+}

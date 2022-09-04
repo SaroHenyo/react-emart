@@ -67,20 +67,20 @@ export const specials = [
   {
     id: 2,
     image: 'images/special_product_2.jpg',
-    name: 'Set One',
+    name: 'Set Two',
     price: '$ 109.99',
   },
   {
     id: 3,
     image: 'images/special_product_3.jpg',
-    name: 'Set One',
+    name: 'Set Three',
     price: '$ 89.99',
   },
   {
     id: 4,
     image: 'images/special_product_4.jpg',
-    name: 'Set One',
-    price: '$ 98.99',
+    name: 'Set Four',
+    price: '$ 95.99',
   },
 ]
 
@@ -88,25 +88,25 @@ export const blogs = [
   {
     id: 1,
     image: 'images/blog_1.jpg',
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title: 'Best Places to Buy and Sell Used Gadgets Online',
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numquam commodi excepturi quasi delectus rem assumenda accusamus odio',
     author: 'John Doe',
   },
   {
     id: 2,
     image: 'images/blog_2.jpg',
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title: 'US states prefer the term “cart” but tend to say “buggy.',
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
-    author: 'Sand Doe',
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numquam commodi excepturi quasi delectus rem assumenda accusamus odio',
+    author: 'Mark Doe',
   },
   {
     id: 3,
     image: 'images/blog_3.jpg',
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title: 'Shopping days are Black Friday, Labor Day and Memorial Day',
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numqua commodi excepturi quasi delectus rem assumenda accusamus odio.',
-    author: 'Brand Doe',
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in animi, magni nulla sed fugiat debitis numquam commodi excepturi quasi delectus rem assumenda accusamus odio',
+    author: 'Steve Doe',
   },
 ]

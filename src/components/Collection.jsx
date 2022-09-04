@@ -1,26 +1,26 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { collections } from '../utilities/enum'
+import { collections } from '../utilities/enums'
 import { Link } from 'react-router-dom'
-import { renderLoading } from '../utilities/Loader'
+import { renderLoading } from '../utilities/loader'
 
 export default function Collection() {
   const [activeFilter, setActiveFilter] = useState('ALL')
   const [products, setProducts] = useState(collections)
-  const [loading, setloading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setloading(true)
+    setLoading(true)
     setTimeout(() => {
       if (activeFilter !== 'ALL') {
         setProducts(
           collections.filter((product) => product.filter === activeFilter),
         )
-        setloading(false)
+        setLoading(false)
       } else {
         setProducts(collections)
-        setloading(false)
+        setLoading(false)
       }
     }, 1000)
   }, [activeFilter])
