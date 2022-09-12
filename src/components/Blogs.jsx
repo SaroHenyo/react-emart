@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { blogs } from '../utilities/enums'
+import React from "react";
+import { Link } from "react-router-dom";
+import { blogs } from "../utilities/enums";
 
 export default function Blogs() {
   const renderBlogs = () => {
@@ -19,8 +19,8 @@ export default function Blogs() {
           </Link>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   return (
     <section id="blogs" className="py-5">
@@ -31,5 +31,5 @@ export default function Blogs() {
         <div className="row">{renderBlogs()}</div>
       </div>
     </section>
-  )
+  );
 }

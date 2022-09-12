@@ -1,4 +1,4 @@
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from "react-loading-skeleton";
 
 export const renderLoading = () => {
   return (
@@ -16,5 +16,5 @@ export const renderLoading = () => {
         <Skeleton height={350} />
       </div>
     </div>
-  )
-}
+  );
+};

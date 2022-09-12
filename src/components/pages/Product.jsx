@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import Skeleton from 'react-loading-skeleton'
-import Footer from '../Footer'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import Footer from "../Footer";
+import { useSelector } from "react-redux";
+import { db } from "../../firebase";
+import firebase from "firebase/compat/app";
 
 export default function Product() {
-  const { id } = useParams()
-  const [loading, setLoading] = useState(false)
-  const [product, setProduct] = useState([])
+  const { id } = useParams();
+  const [loading, setLoading] = useState(false);
+  const [product, setProduct] = useState([]);
+  const activeUser = useSelector((state) => state.activeUser);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getProduct = async () => {
-      setLoading(true)
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-      setProduct(await response.json())
-      setLoading(false)
-    }
+      setLoading(true);
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      setProduct(await response.json());
+      setLoading(false);
+    };
 
-    getProduct()
-  }, [id])
+    getProduct();
+  }, [id]);
+
+  const addProductToCart = (e) => {
+    e.preventDefault();
+    if (activeUser.id) {
+      db.collection("users").doc(activeUser.id).collection("cart").add({
+        product: product,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    } else {
+      navigate("/login");
+    }
+  };
 
   const renderProduct = () => {
     return (
@@ -38,7 +55,10 @@ export default function Product() {
           </p>
           <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
           <p className="lead">{product.description}</p>
-          <button className="btn btn-outline-dark px-4 py-2">
+          <button
+            className="btn btn-outline-dark px-4 py-2"
+            onClick={addProductToCart}
+          >
             Add to Cart
           </button>
           <Link to="/cart" className="btn btn-dark ms-2 px-3 py-2">
@@ -46,8 +66,8 @@ export default function Product() {
           </Link>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const renderLoading = () => {
     return (
@@ -63,8 +83,8 @@ export default function Product() {
           <Skeleton height={150} />
         </div>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -81,5 +101,5 @@ export default function Product() {
       <br />
       <Footer />
     </>
-  )
+  );
 }

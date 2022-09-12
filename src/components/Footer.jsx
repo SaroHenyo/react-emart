@@ -1,18 +1,18 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faEnvelope,
-  faMapMarker,
+  faMapMarked,
   faPhone,
-} from '@fortawesome/free-solid-svg-icons'
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
+  faInstagram,
   faTwitter,
-  faDiscord,
-  faTiktok,
-} from '@fortawesome/free-brands-svg-icons'
-import { Link } from 'react-router-dom'
+  faPinterest,
+} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -20,9 +20,12 @@ export default function Footer() {
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
-            <Link to="/home" className="brand text-decoration-none text-white">
+            <a
+              href="index.html"
+              className="brand text-decoration-none text-white"
+            >
               ULTRA
-            </Link>
+            </a>
             <p className="text-white mt-3 text-muted">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
               ipsa dolores laudantium harum repellat eligendi quos facilis qui
@@ -45,8 +48,7 @@ export default function Footer() {
                   to="/products"
                   className="text-white text-decoration-none text-muted"
                 >
-                  <FontAwesomeIcon icon={faChevronRight} />
-                  Products
+                  <FontAwesomeIcon icon={faChevronRight} /> Products
                 </Link>
               </li>
               <li className="my-3">
@@ -77,7 +79,7 @@ export default function Footer() {
             </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
-                <FontAwesomeIcon icon={faMapMarker} />
+                <FontAwesomeIcon icon={faMapMarked} />
               </span>
               <span className="fw-light">
                 Ultra Street, Angeles City, Pampanga Philippines
@@ -100,15 +102,15 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faTwitter} />
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
-                <FontAwesomeIcon icon={faDiscord} />
+                <FontAwesomeIcon icon={faInstagram} />
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
-                <FontAwesomeIcon icon={faTiktok} />
+                <FontAwesomeIcon icon={faPinterest} />
               </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

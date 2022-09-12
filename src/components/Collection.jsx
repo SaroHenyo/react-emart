@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { collections } from '../utilities/enums'
-import { Link } from 'react-router-dom'
-import { renderLoading } from '../utilities/loader'
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { collections } from "../utilities/enums";
+import { Link } from "react-router-dom";
+import { renderLoading } from "../utilities/loader";
 
 export default function Collection() {
-  const [activeFilter, setActiveFilter] = useState('ALL')
-  const [products, setProducts] = useState(collections)
-  const [loading, setLoading] = useState(false)
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [products, setProducts] = useState(collections);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      if (activeFilter !== 'ALL') {
+      if (activeFilter !== "ALL") {
         setProducts(
-          collections.filter((product) => product.filter === activeFilter),
-        )
-        setLoading(false)
+          collections.filter((product) => product.filter === activeFilter)
+        );
+        setLoading(false);
       } else {
-        setProducts(collections)
-        setLoading(false)
+        setProducts(collections);
+        setLoading(false);
       }
-    }, 1000)
-  }, [activeFilter])
+    }, 1000);
+  }, [activeFilter]);
 
   const renderCollectionList = () => {
     return products.map((item) => (
@@ -59,8 +59,8 @@ export default function Collection() {
           <span className="fw-bold">{item.price}</span>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   return (
     <section id="collection" className="py-5">
@@ -71,16 +71,16 @@ export default function Collection() {
 
         <div className="row g-0">
           <div className="d-flex flex-wrap mt-5 justify-content-center">
-            <button className="btn m-2" onClick={() => setActiveFilter('ALL')}>
+            <button className="btn m-2" onClick={() => setActiveFilter("ALL")}>
               All
             </button>
-            <button className="btn m-2" onClick={() => setActiveFilter('BEST')}>
+            <button className="btn m-2" onClick={() => setActiveFilter("BEST")}>
               Best Sellers
             </button>
-            <button className="btn m-2" onClick={() => setActiveFilter('FEAT')}>
+            <button className="btn m-2" onClick={() => setActiveFilter("FEAT")}>
               Featured
             </button>
-            <button className="btn m-2" onClick={() => setActiveFilter('NEW')}>
+            <button className="btn m-2" onClick={() => setActiveFilter("NEW")}>
               New Arrival
             </button>
           </div>
@@ -90,5 +90,5 @@ export default function Collection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Carousel } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -29,5 +29,5 @@ export default function Hero() {
         </Carousel.Item>
       </Carousel>
     </section>
-  )
+  );
 }

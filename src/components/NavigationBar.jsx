@@ -1,10 +1,49 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faSignOut } from '@fortawesome/free-solid-svg-icons'
-import { Container, Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShoppingCart,
+  faSignOut,
+  faSignIn,
+  faEdit,
+} from "@fortawesome/free-solid-svg-icons";
+import { Container, Navbar } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase";
+import * as actionUser from "../redux/actions/actionUser";
+import { bindActionCreators } from "redux";
+import { useDispatch, useSelector } from "react-redux";
+import Spinner from "react-spinkit";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 export default function NavigationBar() {
+  const [loading, setLoading] = useState(false);
+  const { logoutUser } = bindActionCreators(actionUser, useDispatch());
+  const navigate = useNavigate();
+  const activeUser = useSelector((state) => state.activeUser);
+  const [cartProducts] = useCollection(
+    activeUser?.id &&
+      db.collection("users").doc(activeUser.id).collection("cart")
+  );
+
+  const logout = (e) => {
+    e.preventDefault();
+    auth.signOut();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      logoutUser();
+      navigate("/login");
+    }, 1000);
+  };
+
+  if (loading) {
+    return (
+      <div className="m-5">
+        <Spinner name="ball-spin-fade-loader" color="blue" fadeIn="none" />
+      </div>
+    );
+  }
+
   return (
     <Navbar bg="light" expand="lg" className="bg-white py-4 fixed-top">
       <Container>
@@ -20,20 +59,47 @@ export default function NavigationBar() {
         </NavLink>
 
         <div className="nav-btns order-lg-2">
-          <>
-            <NavLink to="/cart" className="btn position-relative" type="button">
-              <FontAwesomeIcon icon={faShoppingCart} />
-              <span className="nav-btn-label"> CART </span>( 0 )
-            </NavLink>
-            <NavLink
-              to="/login"
-              className="btn position-relative"
-              type="button"
-            >
-              <FontAwesomeIcon icon={faSignOut} />
-              <span className="nav-btn-label"> LOGOUT</span>
-            </NavLink>
-          </>
+          {activeUser.email ? (
+            <>
+              <NavLink
+                to="/cart"
+                className="btn position-relative"
+                type="button"
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
+                <span className="nav-btn-label"> CART </span>(
+                {cartProducts ? cartProducts?.docs.length : 0})
+              </NavLink>
+              <NavLink
+                to="/login"
+                className="btn position-relative"
+                type="button"
+                onClick={logout}
+              >
+                <FontAwesomeIcon icon={faSignOut} />
+                <span className="nav-btn-label"> LOGOUT</span>
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/login"
+                className="btn position-relative"
+                type="button"
+              >
+                <FontAwesomeIcon icon={faSignIn} />
+                <span className="nav-btn-label"> LOGIN</span>
+              </NavLink>
+              <NavLink
+                to="/signup"
+                className="btn position-relative"
+                type="button"
+              >
+                <FontAwesomeIcon icon={faEdit} />
+                <span className="nav-btn-label"> REGISTER</span>
+              </NavLink>
+            </>
+          )}
         </div>
 
         <Navbar.Toggle className="border-0">
@@ -66,5 +132,5 @@ export default function NavigationBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
